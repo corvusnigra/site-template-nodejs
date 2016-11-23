@@ -1,10 +1,11 @@
 var express = require('express');
 var app = express();
 
-var dataFile = require('./data/data.json')
+var dataFile = require('./data/data.json');
 
 
 app.set('port', process.env.PORT || 3000);
+app.use(express.static('app/public'));
 
 app.use(require('./routes/index'));
 app.use(require('./routes/speakers'));
